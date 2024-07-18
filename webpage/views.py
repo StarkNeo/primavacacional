@@ -6,12 +6,14 @@ locale.setlocale(locale.LC_ALL,'')
 
 views = Blueprint("views",__name__)
 
-@views.route("/",methods =["GET","POST"])
+@views.route("/",methods =["GET"])
 def home():
     flask_form = CalculadoraPrimaVacacional()
     dias_vacaciones = 0
     dias_prima = 0
     sueldo_diario = 0
+    monto_vacaciones = 0
+    monto_prima = 0
     if request.method == "POST":
         data = dict(request.form)
         sueldo_diario = float(data.get("sueldo_diario"))
