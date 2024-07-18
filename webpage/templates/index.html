@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+
+    <title>Calculadora Prima Vacacional</title>
+</head>
+
+<body>
+    <main>
+        <section id="informacion">
+            <p><b>Articulo 76 LFT Reformada 27-dic-2022</b><br>
+                Las personas trabajadoras que tengan más de un año de servicios disfrutarán de un
+                periodo anual de vacaciones pagadas, que en ningún caso podrá ser inferior a doce días laborables, y
+                que aumentará en dos días laborables, hasta llegar a veinte, por cada año subsecuente de servicios.
+                A partir del sexto año, el periodo de vacaciones aumentará en dos días por cada cinco de servicios.
+            </p>
+            <table id="tabla-vacaciones">
+                <h2>Tabla de vacaciones </h2>
+
+                <thead>
+                    <th>Antiguedad</th>
+                    <th>Dias</th>
+                </thead>
+                <tbody id="tabla-vacaciones">
+
+                </tbody>
+
+            </table>
+            <p>
+                <b>Artículo 80</b>.- Los trabajadores tendrán derecho a una prima no menor de veinticinco por ciento sobre
+                los salarios que les correspondan durante el período de vacaciones.
+
+            </p>
+        </section>
+        <section id="calculo">
+            <form action="/" method="POST">
+                <h2>Calculadora de Prima Vacacional</h2>
+                <div>
+                    <div class="form-content">
+                        {{template_form.sueldo_diario.label}}
+                        {{template_form.sueldo_diario()}}
+                    </div>
+
+                    <div class="form-content">
+                        {{template_form.antiguedad.label}}
+                        {{template_form.antiguedad()}}
+                    </div>
+
+
+                </div>
+
+
+                {{template_form.submit}}
+
+
+
+
+            </form>
+            <table id="tabla-resultados">
+                <thead>
+                    <th>Concepto</th>
+                    <th>Dias</th>
+                    <th>$</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vacaciones</td>
+                        <td>{{dias_vac}}</td>
+                        <td>{{monto_vacaciones}}</td>
+                    </tr>
+                    <tr>
+                        <td>Prima Vacacional</td>
+                        <td>{{dias_prim}}</td>
+                        <td>{{monto_prima}}</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+            <p>Calculo de la prima basada en la prestacion minima mencionada en el Art.80LFT(25%) </p>
+        </section>
+    </main>
+
+
+    <script src="../static/script.js"></script>
+</body>
+
+</html>
